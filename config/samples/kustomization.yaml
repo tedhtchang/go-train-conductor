@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- train_v1alpha1_tuningjob.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

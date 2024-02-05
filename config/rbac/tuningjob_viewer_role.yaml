@@ -1,0 +1,27 @@
+# permissions for end users to view tuningjobs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: tuningjob-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: go-train-conductor
+    app.kubernetes.io/part-of: go-train-conductor
+    app.kubernetes.io/managed-by: kustomize
+  name: tuningjob-viewer-role
+rules:
+- apiGroups:
+  - train.watsonx.ai
+  resources:
+  - tuningjobs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - train.watsonx.ai
+  resources:
+  - tuningjobs/status
+  verbs:
+  - get

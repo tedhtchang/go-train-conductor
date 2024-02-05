@@ -1,0 +1,18 @@
+apiVersion: train.watsonx.ai/v1alpha1
+kind: TuningJob
+metadata:
+  labels:
+    app.kubernetes.io/name: tuningjob
+    app.kubernetes.io/instance: tuningjob-sample
+    app.kubernetes.io/part-of: go-train-conductor
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: go-train-conductor
+  name: tuningjob-sample
+spec:
+  # TODO(user): Add fields here
+  ModelName: "model1"
+  OutputPath: "/tmp/model1"
+  Parameters:
+    ModelNameOrPath: "/mnt/model1"
+    DataPath: "/mnt/data"
+    SaveStrategy: "file"

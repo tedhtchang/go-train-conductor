@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - train.watsonx.ai
+  resources:
+  - tuningjobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - train.watsonx.ai
+  resources:
+  - tuningjobs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - train.watsonx.ai
+  resources:
+  - tuningjobs/status
+  verbs:
+  - get
+  - patch
+  - update
